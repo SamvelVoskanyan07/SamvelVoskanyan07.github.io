@@ -2,88 +2,89 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Задание 1 - Веб-интерфейс</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 3 - Мобильная верстка</title>
+    <style>
+        /* Базовые стили (Mobile First) */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background: #4a90e2;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            gap: 1rem;
+        }
+
+        .card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Планшеты и ПК (адаптивность через Flexbox) */
+        min-width: 768px {
+            .container
+
+        {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .card {
+            flex: 1 1 calc(50% - 1rem);
+        }
+        }
+    </style>
 </head>
 <body>
-    <h1>Задание 1: Гиперссылки и форма</h1>
 
-    <h2>Список гиперссылок</h2>
-    <ul>
-        <li><a href="http://kubsu.ru">1. Абсолютная ссылка на kubsu.ru</a></li>
-        <li><a href="https://kubsu.ru">2. Абсолютная ссылка с https</a></li>
-        <li><a href="https://kubsu.ru"><img src="logo.png" alt="Логотип" width="80"></a> (3. Ссылка-изображение)</li>
-        <li><a href="/about">4. Сокращенная ссылка на внутреннюю страницу</a></li>
-        <li><a href="/">5. Сокращенная ссылка на главную</a></li>
-        <li><a href="#target-section">6. Ссылка на фрагмент текущей страницы</a></li>
-        <li><a href="page.php?p1=a&p2=b&p3=c">7. Ссылка с тремя параметрами в URL</a></li>
-        <li><a href="page.php?id=42">8. Ссылка с параметром id в URL</a></li>
-        <li><a href="page2.html">9. Относительная на страницу в текущем каталоге</a></li>
-        <li><a href="about/info.html">10. Относительная на страницу в каталоге about</a></li>
-        <li><a href="../parent.html">11. Относительная на страницу уровнем выше</a></li>
-        <li><a href="../../root.html">12. Относительная на страницу двумя уровнями выше</a></li>
-        <li>Это <a href="text-link.html">контекстная ссылка</a> в тексте абзаца. (13)</li>
-        <li><a href="https://ru.wikipedia.org/wiki/HTML#История">14. Ссылка на фрагмент страницы стороннего сайта</a></li>
-        <li>
-            <img src="map.jpg" alt="Карта" usemap="#workmap">
-            <map name="workmap">
-                <area shape="rect" coords="0,0,50,50" href="rect.html" alt="Прямоугольник">
-                <area shape="circle" coords="100,100,20" href="circle.html" alt="Круг">
-            </map>
-            (15. Ссылки из областей картинки)
-        </li>
-        <li><a href="">16. Ссылка с пустым href</a></li>
-        <li><a>17. Ссылка без href</a></li>
-        <li><a href="hidden.html" rel="nofollow">18. Ссылка с запретом перехода для поисковиков</a></li>
-        <li><a href="private.html">19. Ссылка, запрещенная для индексации</a></li>
-        <li><a href="doc.html" title="Важная подсказка">20. Ссылка с подписью title</a></li>
-        <li><a href="ftp://login:password@ftp.kubsu.ru/file.zip">21. Ссылка на FTP с авторизацией</a></li>
-    </ul>
+    <header>
+        <h1>Мой адаптивный сайт</h1>
+    </header>
 
-    <div id="target-section" style="margin-top: 40px;">
-        <h3>Целевой фрагмент для пункта 6</h3>
-    </div>
+    <main class="container">
+        <section class="card">
+            <h2>Блок 1</h2>
+            <p>Это первый информационный блок. Верстка выполнена с использованием Flexbox и принципа Mobile First.</p>
+        </section>
 
-    <h2>Форма обратной связи</h2>
-    <form action="submit.php" method="POST">
-        <label>ФИО: <input type="text" name="fio" required></label>
+        <section class="card">
+            <h2>Блок 2</h2>
+            <p>Это второй блок. На экранах мобильных телефонов они выстроены в колонку, а на широких экранах встают в ряд.</p>
+        </section>
+    </main>
 
-        <label>Телефон: <input type="tel" name="phone"></label>
+    <footer>
+        <p>&copy; 2026. Все права защищены.</p>
+    </footer>
 
-        <label>E-mail: <input type="email" name="email" required></label>
-
-        <label>Дата рождения: <input type="date" name="birthdate"></label>
-
-
-        <p>Пол:</p>
-        <label><input type="radio" name="gender" value="male"> Мужской</label>
-        <label><input type="radio" name="gender" value="female"> Женский</label>
-
-        <label>
-            Любимый язык программирования:
-            <select name="langs[]" multiple size="4">
-                <option value="Pascal">Pascal</option>
-                <option value="C">C</option>
-                <option value="C++">C++</option>
-                <option value="JavaScript">JavaScript</option>
-                <option value="PHP">PHP</option>
-                <option value="Python">Python</option>
-                <option value="Java">Java</option>
-                <option value="Haskell">Haskell</option>
-                <option value="Clojure">Clojure</option>
-                <option value="Prolog">Prolog</option>
-                <option value="Scala">Scala</option>
-            </select>
-        </label>
-
-        <label>
-            Биография:
-
-            <textarea name="bio" rows="4" cols="40"></textarea>
-        </label>
-
-        <label><input type="checkbox" name="contract" required> С контрактом ознакомлен(а)</label>
-
-        <button type="submit">Сохранить</button>
-    </form>
 </body>
 </html>
